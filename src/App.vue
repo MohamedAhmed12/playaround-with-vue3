@@ -1,9 +1,9 @@
 <script setup>
-import AttrBindingWithEvent from "./components/AttrBindingWithEvent.vue";
+import ListConditionsComputed from "./components/ListConditionsComputed.vue";
 </script>
 
 <template>
-  <AttrBindingWithEvent />
+  <ListConditionsComputed />
 </template>
 
 <style scoped>
