@@ -1,24 +1,9 @@
-<script>
-export default {
-  data() {
-    return {
-      greeting: "Hello World",
-    };
-  },
-
-  mounted(){
-    setTimeout(()=>{
-        this.greeting = 'changed'
-    }, 3000)
-  }
-};
+<script setup>
+import AttrBindingWithEvent from "./components/AttrBindingWithEvent.vue";
 </script>
 
 <template>
-  <input type="text" v-model="greeting" />
-  <p>
-    {{ greeting }}
-  </p>
+  <AttrBindingWithEvent />
 </template>
 
 <style scoped>
