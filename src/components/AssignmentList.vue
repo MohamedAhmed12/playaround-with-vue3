@@ -7,19 +7,20 @@ export default {
 };
 </script>
 
-<template class="h-full grid place-items-center">
+<template>
   <section class="text-left" v-show="assignments.length">
     <h2 class="font-bold mb-2">{{ title }}</h2>
-    <ul>
+    
+    <ul class="border border-gray-600 divide-y">
       <li v-for="assignment in assignments" :key="assignment.id">
-        {{ assignment.name }}
+     <label class="p-2 flex justify-between items-center">
+           {{ assignment.name }}
         <input
           type="checkbox"
-          name=""
-          id=""
           class="ml-2"
           v-model="assignment.completed"
         />
+     </label>
       </li>
     </ul>
   </section>
