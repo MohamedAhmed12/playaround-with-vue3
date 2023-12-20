@@ -1,16 +1,15 @@
 <script>
-import Button from "./components/Button.vue";
+import Assignments from "./components/Assignments.vue";
 
 export default {
   components: {
-    Button,
+    Assignments,
   },
 };
 </script>
 
 <template>
-  <Button>Submit</Button>
-  <Button type="secondary">Click me</Button>
+  <Assignments />
 </template>
 
 <style scoped>
