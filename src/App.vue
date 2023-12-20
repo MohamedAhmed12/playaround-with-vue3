@@ -1,9 +1,16 @@
-<script setup>
-import ListConditionsComputed from "./components/ListConditionsComputed.vue";
+<script>
+import Button from "./components/Button.vue";
+
+export default {
+  components: {
+    Button,
+  },
+};
 </script>
 
 <template>
-  <ListConditionsComputed />
+  <Button>Submit</Button>
+  <Button type="secondary">Click me</Button>
 </template>
 
 <style scoped>
