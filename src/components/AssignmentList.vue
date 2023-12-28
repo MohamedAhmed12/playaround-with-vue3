@@ -5,6 +5,10 @@ export default {
   props: {
     assignments: Array,
     title: String,
+    canToggle: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -26,10 +30,20 @@ export default {
 </script>
 
 <template>
-  <section class="text-left mt-5" v-show="assignments.length">
-    <h2 class="font-bold mb-2">
-      {{ title }} <span>({{ assignments.length }})</span>
-    </h2>
+  <section class="text-left m-5 w-60" v-show="assignments.length">
+    <div class="flex justify-between items-center">
+      <h2 class="font-bold">
+        {{ title }} <span>({{ assignments.length }})</span>
+      </h2>
+
+      <button
+        class="bg-transparent w-5 px-0 py-2 hover:border-none"
+        v-show="canToggle"
+        @click="$emit('toggle')"
+      >
+        &times;
+      </button>
+    </div>
 
     <assignment-tags
       :initialTags="assignments.map((a) => a.tag)"
@@ -43,6 +57,7 @@ export default {
           <input type="checkbox" class="ml-2" v-model="assignment.completed" />
         </label>
       </li>
+      <slot />
     </ul>
   </section>
 </template>

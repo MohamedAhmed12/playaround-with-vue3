@@ -7,6 +7,7 @@ export default {
     return {
       assignments: [],
       newAssignment: "",
+      showCompleted: true,
     };
   },
 
@@ -40,9 +41,18 @@ export default {
 </script>
 
 <template>
-  <assignment-list :assignments="filters.inProgress" title="In Progress" />
-  <assignment-list :assignments="filters.completed" title="Completed" />
+  <section class="flex gap">
+    <assignment-list :assignments="filters.inProgress" title="In Progress">
+      <AssignmentCreate v-on:add="add" />
+    </assignment-list>
 
-  <AssignmentCreate v-on:add="add" />
+    <assignment-list
+      v-if="showCompleted"
+      :assignments="filters.completed"
+      title="Completed"
+      can-toggle
+      @toggle="showCompleted = !showCompleted"
+    />
+  </section>
 </template>
 
