@@ -1,0 +1,28 @@
+{
+  "assignments": [
+    {
+      "id": 1,
+      "name": "Finish Project",
+      "completed": false,
+      "tag": "math"
+    },
+    {
+      "id": 2,
+      "name": "Read chapter 4",
+      "completed": false,
+      "tag": "math"
+    },
+    {
+      "id": 3,
+      "name": "Do my workouts",
+      "completed": false,
+      "tag": "science"
+    },
+    {
+      "id": 4,
+      "name": "Completed Tas",
+      "completed": true,
+      "tag": "science"
+    }
+  ]
+}
