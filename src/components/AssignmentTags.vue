@@ -5,10 +5,10 @@ export default {
       type: Array,
       default: [],
     },
-    currentTag: {
-      type: String,
+    currentTag:{
+        type: String,
       default: "",
-    },
+    }
   },
 
   computed: {
@@ -25,10 +25,10 @@ export default {
     <button
       v-for="tag in tags"
       :key="tag"
-      @click="this.$emit('change', tag)"
+      @click="this.$emit('update:currentTag', tag)"
       class="bg-transparent border border-2 rounded px-1 py-px mb-4 text-xs"
       :class="{
-        '!border-blue-600 text-blue-600': tag == currentTag,
+        'border-blue-600 text-blue-600': tag == currentTag,
       }"
     >
       {{ tag }}

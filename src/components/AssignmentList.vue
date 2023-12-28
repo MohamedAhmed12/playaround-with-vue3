@@ -33,8 +33,7 @@ export default {
 
     <assignment-tags
       :initialTags="assignments.map((a) => a.tag)"
-      :currentTag="currentTag"
-      @change="currentTag = $event"
+      v-model:currentTag="currentTag"
     />
 
     <ul class="border border-gray-600 divide-y">
