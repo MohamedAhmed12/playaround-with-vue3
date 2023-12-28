@@ -43,7 +43,7 @@ export default {
 <template>
   <section class="flex gap">
     <assignment-list :assignments="filters.inProgress" title="In Progress">
-      <AssignmentCreate v-on:add="add" />
+      <AssignmentCreate v-on:add="add" class="mt-3"/>
     </assignment-list>
 
     <assignment-list

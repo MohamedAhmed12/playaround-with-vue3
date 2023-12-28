@@ -1,5 +1,6 @@
 <script>
 import AssignmentTags from "./AssignmentTags.vue";
+import Panel from "./Panel.vue";
 
 export default {
   props: {
@@ -25,39 +26,41 @@ export default {
     },
   },
 
-  components: { AssignmentTags },
+  components: { AssignmentTags, Panel },
 };
 </script>
 
 <template>
-  <section class="text-left m-5 w-60" v-show="assignments.length">
-    <div class="flex justify-between items-center">
-      <h2 class="font-bold">
-        {{ title }} <span>({{ assignments.length }})</span>
+  <Panel v-show="assignments.length" class="w-60">
+    <div class="flex justify-between items-start">
+      <h2 class="font-bold mb-2">
+        {{ title }}
+        <span>({{ assignments.length }})</span>
       </h2>
 
       <button
-        class="bg-transparent w-5 px-0 py-2 hover:border-none"
         v-show="canToggle"
         @click="$emit('toggle')"
+        class="bg-transparent w-5 p-0 hover:border-none"
       >
-        &times;
+        x
       </button>
     </div>
 
     <assignment-tags
-      :initialTags="assignments.map((a) => a.tag)"
       v-model:currentTag="currentTag"
-    />
+      :initial-tags="assignments.map((a) => a.tag)"
+    ></assignment-tags>
 
-    <ul class="border border-gray-600 divide-y">
+    <ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
       <li v-for="assignment in filteredByTagAssignments" :key="assignment.id">
         <label class="p-2 flex justify-between items-center">
           {{ assignment.name }}
           <input type="checkbox" class="ml-2" v-model="assignment.completed" />
         </label>
       </li>
-      <slot />
     </ul>
-  </section>
+
+    <slot></slot>
+  </Panel>
 </template>
