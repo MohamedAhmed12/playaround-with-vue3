@@ -6,9 +6,9 @@ export default {
   data() {
     return {
       assignments: [
-        { id: 1, name: "one", completed: false },
-        { id: 2, name: "two", completed: false },
-        { id: 3, name: "three", completed: false },
+        { id: 1, name: "one", completed: false, tag: 'math' },
+        { id: 2, name: "two", completed: false, tag: 'science' },
+        { id: 3, name: "three", completed: false, tag: 'math' },
       ],
       newAssignment: "",
     };
