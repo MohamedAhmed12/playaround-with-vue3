@@ -1,5 +1,6 @@
 <script>
 import AssignmentList from "./AssignmentList.vue";
+import AssignmentCreate from "./AssignmentCreate.vue";
 
 export default {
   data() {
@@ -22,17 +23,15 @@ export default {
     },
   },
 
-  components: { AssignmentList },
+  components: { AssignmentList, AssignmentCreate },
 
   methods: {
-    add() {
+    add(name) {
       this.assignments.push({
-        name: this.newAssignment,
+        name,
         completed: false,
         id: this.assignments.length + 1,
       });
-
-      this.newAssignment = "";
     },
   },
 };
@@ -42,16 +41,6 @@ export default {
   <assignment-list :assignments="filters.inProgress" title="In Progress" />
   <assignment-list :assignments="filters.completed" title="Completed" />
 
-  <form class="mt-5" @submit.prevent="add">
-    <div class="text-black">
-      <input
-        type="text"
-        placeholder="New assignment..."
-        class="p-2"
-        v-model="newAssignment"
-      />
-      <button type="submit" class="bg-white rounded p-2 ml-2">Add</button>
-    </div>
-  </form>
+  <AssignmentCreate v-on:add="add" />
 </template>
 
