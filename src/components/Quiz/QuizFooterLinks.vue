@@ -1,13 +1,13 @@
 <script setup>
-import { inject } from "vue";
-
-const quiz = inject("quiz");
+import { state } from "@/stores/quizStore.js";
 </script>
 
 
 <template>
-  <div class="mt-2 flex gap-2">
-    <h5>{{ quiz.name }}</h5>
+  <div class="mt-2 flex gap-4 items-center">
+    <h5>{{ state.name }}</h5>
+
+    <button @click="state.name = 'New quiz name'" class="bg-gray-600">Change quiz name</button>
 
     <ul class="flex gap-2">
       <li><a href="#">Get a job</a></li>

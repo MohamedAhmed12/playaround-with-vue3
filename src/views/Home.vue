@@ -15,7 +15,7 @@ const object = useStorage("obj", { one: "1" });
 
 <template>
   <section class="flex flex-col items-start">
-    <!-- <h1>home</h1>
+    <h1>home</h1>
     <TheWelcome />
 
     <button @click="flash('it works')" class="text-black my-5">Flash</button>
@@ -31,8 +31,6 @@ const object = useStorage("obj", { one: "1" });
 
     <form>
       <TabbableTextarea v-model="comment" />
-    </form> -->
-
-    <Quiz :quiz="{ name: 'First quiz', questions: [] }" />
+    </form>
   </section>
 </template>

@@ -20,6 +20,7 @@ export default {
     <ul class="flex gap-4">
       <router-link :to="{ name: 'home' }">Home</router-link>
       <router-link :to="{ name: 'about' }">About</router-link>
+      <router-link :to="{ name: 'quiz' }">Quiz</router-link>
     </ul>
     <router-view />
   </div>

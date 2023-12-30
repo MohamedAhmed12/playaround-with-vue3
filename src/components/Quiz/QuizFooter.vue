@@ -5,7 +5,7 @@ import QuizFooterLinks from "./QuizFooterLinks.vue";
 
 <template>
   <footer class="mt-6">
-    <h4>Quiz footer</h4>
+    <h4 class="text-left mb-3">Quiz footer</h4>
     <QuizFooterLinks />
   </footer>
 </template>
