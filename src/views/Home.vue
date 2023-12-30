@@ -1,6 +1,7 @@
 <script setup>
 import TheWelcome from "@/components/TheWelcome.vue";
 import TabbableTextarea from "@/components/TabbableTextarea.vue";
+import Quiz from "@/components/Quiz/index.vue";
 import { useFlash } from "@/composables/useFlash";
 import { useStorage } from "@/composables/useStorage";
 import { ref } from "vue";
@@ -14,7 +15,7 @@ const object = useStorage("obj", { one: "1" });
 
 <template>
   <section class="flex flex-col items-start">
-    <h1>home</h1>
+    <!-- <h1>home</h1>
     <TheWelcome />
 
     <button @click="flash('it works')" class="text-black my-5">Flash</button>
@@ -30,6 +31,8 @@ const object = useStorage("obj", { one: "1" });
 
     <form>
       <TabbableTextarea v-model="comment" />
-    </form>
+    </form> -->
+
+    <Quiz :quiz="{ name: 'First quiz', questions: [] }" />
   </section>
 </template>
