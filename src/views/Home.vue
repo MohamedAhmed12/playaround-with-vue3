@@ -1,9 +1,11 @@
 <script setup>
 import TheWelcome from "@/components/TheWelcome.vue";
+import TabbableTextarea from "@/components/TabbableTextarea.vue";
 import { useFlash } from "@/composables/useFlash";
 import { useStorage } from "@/composables/useStorage";
 import { ref } from "vue";
 
+const comment = ref("initial comment");
 const { flash } = useFlash();
 const food = useStorage("food", "tacos");
 const age = useStorage("age", "29");
@@ -25,5 +27,9 @@ const object = useStorage("obj", { one: "1" });
       How old are you?
       <input type="text" class="text-black ml-2 px-2 my-2" v-model="age" />
     </p>
+
+    <form>
+      <TabbableTextarea v-model="comment" />
+    </form>
   </section>
 </template>
