@@ -1,0 +1,11 @@
+{
+  "name": "Gado",
+  "spots": 8,
+  "members": [
+    { "name": "John Doe", "email": "john@doe.com", "status": "Active" },
+    { "name": "Mo Doe", "email": "mo@doe.com", "status": "Active" },
+    { "name": "Sarah Doe", "email": "sarah@doe.com", "status": "Active" },
+    { "name": "Steve Doe", "email": "steve@doe.com", "status": "Active" },
+    { "name": "Jen Doe", "email": "Jen@doe.com", "status": "Active" }
+  ]
+}

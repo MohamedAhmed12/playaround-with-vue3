@@ -22,6 +22,7 @@ export default {
       <router-link :to="{ name: 'about' }">About</router-link>
       <router-link :to="{ name: 'quiz' }">Quiz</router-link>
       <router-link :to="{ name: 'counter' }">Counter</router-link>
+      <router-link :to="{ name: 'team' }">Team</router-link>
     </ul>
     <router-view />
   </div>
